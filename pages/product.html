@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/images/logos/pngwing.com.png" />
+    <title>Product — VALUE Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/product.css" />
+    <link rel="stylesheet" href="../assets/css/home.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header"><span class="sidebar-title">VALUE</span><div id="divMark"><i class="fa-solid fa-xmark"></i></div></div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="store-zara.html"><i class="fa-solid fa-tag"></i> Zara</a></li>
+        <li><a href="store-gucci.html"><i class="fa-solid fa-tag"></i> Gucci</a></li>
+        <li><a href="store-ck.html"><i class="fa-solid fa-tag"></i> Calvin Klein</a></li>
+        <li><a href="store-vogue.html"><i class="fa-solid fa-tag"></i> Vogue</a></li>
+        <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+      </ul>
+      <div class="sidebar-footer"><p>&copy; 2025 VALUE Store.</p></div>
+    </div>
+    <div class="sidebar-backdrop"></div>
+
+    <!-- Navbar -->
+    <nav id="nav">
+      <a href="../index.html" class="nav-brand"><span class="brand-logo">VALUE</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="store-zara.html">Zara</a></li>
+        <li><a href="store-gucci.html">Gucci</a></li>
+        <li><a href="store-ck.html">Calvin Klein</a></li>
+        <li><a href="store-vogue.html">Vogue</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="cart-wrapper"><a href="cart.html" class="nav-btn"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="amount">0</span></a></div>
+        <button class="nav-btn menu-toggle" id="list"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </nav>
+
+    <!-- Product Section -->
+    <div class="product-section">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
+        <a href="#" id="breadcrumbBrandLink"><span id="breadcrumbBrand">Brand</span></a>
+        <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="current" id="breadcrumbProduct">Product</span>
+      </nav>
+
+      <!-- Product Layout -->
+      <div class="product-layout">
+        <!-- Gallery -->
+        <div class="product-gallery">
+          <div class="product-main-img">
+            <img id="productMainImg" src="" alt="Product" />
+          </div>
+        </div>
+
+        <!-- Details -->
+        <div class="product-details">
+          <!-- Brand -->
+          <div class="product-brand-badge">
+            <img id="productBrandLogo" src="" alt="Brand Logo" />
+            <span id="productBrandName"></span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="product-title" id="productTitle">Loading...</h1>
+
+          <!-- Rating -->
+          <div class="product-rating">
+            <div class="stars" id="productStars"></div>
+            <span class="rating-score" id="productRatingScore"></span>
+            <span class="rating-count" id="productReviewsCount"></span>
+          </div>
+
+          <!-- Price -->
+          <div class="product-price-block">
+            <span class="current-price" id="productCurrentPrice"></span>
+            <span class="original-price" id="productOriginalPrice"></span>
+            <span class="discount-tag" id="discountTag"></span>
+          </div>
+
+          <!-- Description -->
+          <p class="product-description" id="productDescription"></p>
+
+          <!-- Color Selection -->
+          <div class="option-group">
+            <div class="option-label">
+              Color <span class="selected-val" id="selectedColorVal"></span>
+            </div>
+            <div class="color-options" id="colorOptions"></div>
+          </div>
+
+          <!-- Size Selection -->
+          <div class="option-group">
+            <div class="option-label">
+              Size <span class="selected-val" id="selectedSizeVal"></span>
+            </div>
+            <div class="size-options" id="sizeOptions"></div>
+          </div>
+
+          <!-- Quantity -->
+          <div class="option-group">
+            <div class="option-label">Quantity</div>
+            <div class="qty-control">
+              <button class="qty-btn" onclick="changeQty(-1)"><i class="fa-solid fa-minus"></i></button>
+              <span class="qty-value" id="qtyValue">1</span>
+              <button class="qty-btn" onclick="changeQty(1)"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="product-actions">
+            <button class="btn-add-cart" id="addToCartBtn" onclick="handleAddToCart()">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-view-cart" onclick="handleViewCart()">
+              <i class="fa-solid fa-cart-shopping"></i> View Cart
+            </button>
+          </div>
+
+          <!-- Meta Info -->
+          <div class="product-meta">
+            <div class="meta-row"><i class="fa-solid fa-truck-fast"></i> <strong>Free shipping</strong> on orders over $999</div>
+            <div class="meta-row"><i class="fa-solid fa-rotate-left"></i> <strong>30-day</strong> easy returns policy</div>
+            <div class="meta-row"><i class="fa-solid fa-shield-halved"></i> <strong>Authentic</strong> — 100% genuine products guaranteed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Similar Products -->
+    <div class="similar-products">
+      <h2 class="similar-title">You May Also Like</h2>
+      <div id="similarGrid" class="products-grid" style="padding:0;"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand"><h2>VALUE</h2><p>Premium luxury fashion curated for the modern lifestyle.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col"><h3>Brands</h3><ul>
+          <li><a href="store-zara.html">Zara</a></li>
+          <li><a href="store-gucci.html">Gucci</a></li>
+          <li><a href="store-ck.html">Calvin Klein</a></li>
+          <li><a href="store-vogue.html">Vogue</a></li>
+        </ul></div>
+        <div class="footer-col"><h3>Help</h3><ul>
+          <li><a href="cart.html">My Cart</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="../index.html">Home</a></li>
+        </ul></div>
+        <div class="footer-col footer-newsletter"><h3>Newsletter</h3>
+          <p>Subscribe for exclusive drops.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Your email" />
+            <button onclick="showToast('Subscribed!','Thanks for joining VALUE.','success')"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2015-2025 VALUE Store. All rights reserved.</p></div>
+    </footer>
+
+    <i id="btnToUp" class="fa-solid fa-arrow-up"></i>
+
+    <script src="../assets/js/products-data.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/product.js"></script>
+  </body>
+</html>

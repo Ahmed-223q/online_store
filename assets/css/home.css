@@ -1,0 +1,416 @@
+/* ===================== HOME PAGE CSS ===================== */
+
+/* Hero Section */
+#head, .hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background-image: url('../assets/images/hero/headphoto.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: 0 80px;
+  max-width: 700px;
+}
+
+.hero-label {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #c5a880;
+  margin-bottom: 18px;
+  animation: fadeSlideIn 0.7s ease both;
+}
+
+.hero-title {
+  font-family: 'Cinzel', 'Noto Serif', Georgia, serif;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  animation: fadeSlideIn 0.7s 0.2s ease both;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 38px;
+  max-width: 480px;
+  line-height: 1.7;
+  animation: fadeSlideIn 0.7s 0.4s ease both;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeSlideIn 0.7s 0.6s ease both;
+}
+
+.hero-cta .btn-luxury {
+  padding: 16px 38px;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  animation: bounce 2s infinite;
+  z-index: 2;
+}
+
+.hero-scroll-indicator i {
+  font-size: 1.2rem;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  padding: 70px 32px 40px;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #9f835b;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Cinzel', 'Noto Serif', Georgia, serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #121417;
+  margin-bottom: 14px;
+}
+
+.section-desc {
+  font-size: 1rem;
+  color: #5e6670;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Brands Grid */
+#brandList, .brands-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 340px);
+  gap: 16px;
+  padding: 0 32px 60px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.brand-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.brand-card .brand-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-card:hover .brand-bg {
+  transform: scale(1.06);
+}
+
+.brand-card .brand-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);
+  transition: background 0.4s ease;
+}
+
+.brand-card:hover .brand-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 70%);
+}
+
+.brand-card .brand-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px;
+  color: #fff;
+  transform: translateY(10px);
+  transition: transform 0.4s ease;
+}
+
+.brand-card:hover .brand-info {
+  transform: translateY(0);
+}
+
+.brand-card .brand-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.brand-card .brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #c5a880;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.brand-card:hover .brand-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Old brandList compatibility */
+#brandList .img-1 { background-image: url('../assets/images/hero/IMG1.jpg'); background-size: cover; }
+#brandList .img-2 { background-image: url('../assets/images/hero/IMG2.jpg'); background-size: cover; }
+#brandList .img-3 { background-image: url('../assets/images/hero/IMG3.jpg'); background-size: cover; }
+#brandList .img-4 { background-image: url('../assets/images/hero/IMG4.jpg'); background-size: cover; }
+
+/* Products Grid (New Arrivals) */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+  padding: 0 32px 80px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.product-card .product-img-wrap {
+  position: relative;
+  background: #f1f2f4;
+  height: 300px;
+  overflow: hidden;
+}
+
+.product-card .product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-img-wrap img {
+  transform: scale(1.06);
+}
+
+.product-card .product-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #000;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: 6px;
+}
+
+.product-card .brand-logo-wrap {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.92);
+  border-radius: 8px;
+  padding: 5px 8px;
+}
+
+.product-card .brand-logo-wrap img {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+}
+
+.product-card .product-body {
+  padding: 18px 20px 22px;
+}
+
+.product-card .product-name {
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: #121417;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-card .product-brand {
+  font-size: 0.8rem;
+  color: #9f835b;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.product-card .product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.product-card .product-price-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card .product-price {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #121417;
+}
+
+.product-card .product-original-price {
+  font-size: 0.82rem;
+  color: #8b95a1;
+  text-decoration: line-through;
+}
+
+.product-card .product-cta {
+  background: #121417;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.product-card .product-cta:hover {
+  background: #c5a880;
+  color: #000;
+  transform: scale(1.04);
+}
+
+/* Stats Bar */
+.stats-bar {
+  background: #121417;
+  color: #fff;
+  padding: 40px 32px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stat-item .stat-number {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #c5a880;
+  margin-bottom: 6px;
+}
+
+.stat-item .stat-label {
+  font-size: 0.82rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #a0a6b1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  #brandList, .brands-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .brands-grid .brand-card, #brandList div {
+    height: 260px !important;
+  }
+  .hero-content { padding: 0 32px; }
+  .products-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .hero-title { font-size: 2.3rem; }
+  .hero-content { padding: 0 20px; }
+  .section-header { padding: 50px 20px 30px; }
+  #brandList, .brands-grid, .products-grid { padding: 0 16px 40px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}

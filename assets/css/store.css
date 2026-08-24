@@ -1,0 +1,207 @@
+/* ===================== STORE PAGES CSS ===================== */
+
+.store-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 480px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.store-hero-slider {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.store-hero-slide {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.store-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%);
+}
+
+.store-hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: 50px 64px;
+  width: 100%;
+}
+
+.store-hero-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #c5a880;
+  margin-bottom: 12px;
+}
+
+.store-hero-title {
+  font-family: 'Cinzel', 'Noto Serif', serif;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 800;
+  letter-spacing: 6px;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.3);
+}
+
+.store-hero-desc {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.store-hero-controls {
+  position: absolute;
+  bottom: 50px;
+  right: 64px;
+  display: flex;
+  gap: 12px;
+  z-index: 3;
+}
+
+.hero-control-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-control-btn:hover {
+  background: #c5a880;
+  border-color: #c5a880;
+  color: #000;
+}
+
+/* Store Toolbar */
+.store-toolbar {
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 11px 18px 11px 46px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 9999px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+
+.search-box input:focus {
+  border-color: #000;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
+}
+
+.search-box i {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8b95a1;
+  font-size: 0.9rem;
+}
+
+.sort-select {
+  padding: 10px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  background: #f8f9fa;
+  transition: border-color 0.3s ease;
+}
+
+.sort-select:focus {
+  border-color: #000;
+}
+
+.results-count {
+  font-size: 0.88rem;
+  color: #8b95a1;
+  white-space: nowrap;
+}
+
+/* Collection Grid */
+#collection, .collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+  padding: 40px 32px 80px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  grid-column: 1 / -1;
+}
+
+.empty-state i {
+  font-size: 3rem;
+  color: #d1d5db;
+  margin-bottom: 16px;
+}
+
+.empty-state h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+.empty-state p {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .store-hero-content { padding: 40px 20px; }
+  .store-hero-controls { right: 20px; bottom: 30px; }
+  .store-toolbar { padding: 16px 20px; }
+  #collection, .collection-grid { padding: 24px 16px 60px; gap: 18px; }
+}

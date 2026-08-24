@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/images/logos/pngwing.com.png" />
+    <title>Cart — VALUE Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/cart.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header"><span class="sidebar-title">VALUE</span><div id="divMark"><i class="fa-solid fa-xmark"></i></div></div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="store-zara.html"><i class="fa-solid fa-tag"></i> Zara</a></li>
+        <li><a href="store-gucci.html"><i class="fa-solid fa-tag"></i> Gucci</a></li>
+        <li><a href="store-ck.html"><i class="fa-solid fa-tag"></i> Calvin Klein</a></li>
+        <li><a href="store-vogue.html"><i class="fa-solid fa-tag"></i> Vogue</a></li>
+        <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+      </ul>
+      <div class="sidebar-footer"><p>&copy; 2025 VALUE Store.</p></div>
+    </div>
+    <div class="sidebar-backdrop"></div>
+
+    <!-- Navbar -->
+    <nav id="nav">
+      <a href="../index.html" class="nav-brand"><span class="brand-logo">VALUE</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="store-zara.html">Zara</a></li>
+        <li><a href="store-gucci.html">Gucci</a></li>
+        <li><a href="store-ck.html">Calvin Klein</a></li>
+        <li><a href="store-vogue.html">Vogue</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="cart-wrapper"><a href="cart.html" class="nav-btn"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="amount">0</span></a></div>
+        <button class="nav-btn menu-toggle" id="list"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </nav>
+
+    <!-- Cart Section -->
+    <div class="cart-section">
+      <!-- Header -->
+      <div class="cart-header">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <div>
+          <h1>Your Cart</h1>
+          <div class="cart-item-count" id="cartItemCount">0 items</div>
+        </div>
+      </div>
+
+      <!-- Empty Cart State -->
+      <div id="emptyCart" class="cart-empty" style="display:none;">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <h2>Your Cart is Empty</h2>
+        <p>Looks like you haven't added anything yet. Explore our luxury collections and find something you love.</p>
+        <a href="../index.html" class="btn-luxury">
+          <i class="fa-solid fa-bag-shopping"></i> Start Shopping
+        </a>
+      </div>
+
+      <!-- Cart Layout -->
+      <div class="cart-layout" id="orderSummary">
+        <!-- Cart Items -->
+        <div>
+          <div id="cartItems" class="cart-items"></div>
+        </div>
+
+        <!-- Order Summary -->
+        <aside class="order-summary">
+          <div class="summary-title">Order Summary</div>
+
+          <div class="summary-row">
+            <span class="label">Subtotal</span>
+            <span class="value" id="summarySubtotal">$0</span>
+          </div>
+          <div class="summary-row" id="discountRow" style="display:none;">
+            <span class="label" style="color:#2a9d8f;">Discount</span>
+            <span class="value" style="color:#2a9d8f;" id="summaryDiscount">$0</span>
+          </div>
+          <div class="summary-row">
+            <span class="label">Shipping</span>
+            <span class="value" id="summaryShipping">$30</span>
+          </div>
+          <div class="summary-divider"></div>
+          <div class="summary-total">
+            <span class="total-label">Total</span>
+            <span class="total-value" id="summaryTotal">$0</span>
+          </div>
+
+          <!-- Promo Code -->
+          <div class="promo-section">
+            <span class="promo-label">Promo Code</span>
+            <div class="promo-input-wrap">
+              <input type="text" class="promo-input" id="promoInput" placeholder="e.g. VALUE10" />
+              <button class="promo-apply-btn" id="applyPromoBtn">Apply</button>
+            </div>
+            <div class="promo-feedback" id="promoFeedback"></div>
+          </div>
+
+          <button class="btn-checkout" id="checkoutBtn">
+            <i class="fa-solid fa-lock"></i> Secure Checkout
+          </button>
+          <div class="secure-badge">
+            <i class="fa-solid fa-shield-halved"></i> SSL Secured & Encrypted
+          </div>
+
+          <div style="margin-top:20px;text-align:center;">
+            <a href="../index.html" style="font-size:0.85rem;color:#8b95a1;text-decoration:underline;">
+              ← Continue Shopping
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand"><h2>VALUE</h2><p>Premium luxury fashion for the modern lifestyle.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col"><h3>Brands</h3><ul>
+          <li><a href="store-zara.html">Zara</a></li>
+          <li><a href="store-gucci.html">Gucci</a></li>
+          <li><a href="store-ck.html">Calvin Klein</a></li>
+          <li><a href="store-vogue.html">Vogue</a></li>
+        </ul></div>
+        <div class="footer-col"><h3>Help</h3><ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="../index.html">Home</a></li>
+        </ul></div>
+        <div class="footer-col footer-newsletter"><h3>Newsletter</h3>
+          <p>Subscribe for exclusive drops.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Your email" />
+            <button onclick="showToast('Subscribed!','Thanks for joining VALUE.','success')"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2015-2025 VALUE Store. All rights reserved.</p></div>
+    </footer>
+
+    <i id="btnToUp" class="fa-solid fa-arrow-up"></i>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal-overlay" id="checkoutModal">
+      <div class="checkout-modal">
+        <div class="modal-header">
+          <h2 class="modal-title">Checkout</h2>
+          <button class="modal-close-btn" id="closeModalBtn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <!-- Form -->
+        <form id="checkoutForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name *</label>
+              <input type="text" class="form-input" placeholder="Ahmed" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name *</label>
+              <input type="text" class="form-input" placeholder="Ibrahim" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" class="form-input" placeholder="ahmed@example.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number *</label>
+            <input type="tel" class="form-input" placeholder="+20 1234 567 890" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Delivery Address *</label>
+            <input type="text" class="form-input" placeholder="Street, City, Country" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Card Number *</label>
+              <input type="text" class="form-input" placeholder="•••• •••• •••• ••••" maxlength="19" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">CVV *</label>
+              <input type="text" class="form-input" placeholder="•••" maxlength="4" required />
+            </div>
+          </div>
+
+          <div style="text-align:right;font-size:0.9rem;color:#5e6670;margin-bottom:4px;">
+            Order Total: <strong id="summaryTotalModal" style="color:#121417;">$0</strong>
+          </div>
+
+          <button type="submit" class="btn-place-order">
+            <i class="fa-solid fa-check-circle"></i> Place Order
+          </button>
+        </form>
+
+        <!-- Success -->
+        <div class="order-success" id="orderSuccess">
+          <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+          <h2 class="success-title">Order Confirmed!</h2>
+          <p class="success-msg">
+            Thank you for your purchase. Your order <strong id="orderNumber"></strong> has been confirmed and will be delivered within 3–5 business days.
+          </p>
+          <button class="btn-luxury" onclick="continueShopping()">
+            <i class="fa-solid fa-bag-shopping"></i> Continue Shopping
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/js/products-data.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/cart.js"></script>
+  </body>
+</html>

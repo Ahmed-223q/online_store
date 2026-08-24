@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/images/logos/pngwing.com.png" />
+    <title>Contact — VALUE Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <style>
+      .contact-hero {
+        background: #0f1115;
+        color: #fff;
+        text-align: center;
+        padding: 100px 32px 80px;
+      }
+      .contact-hero .section-label { color: #c5a880; }
+      .contact-hero .section-title { color: #fff; }
+      .contact-hero .section-desc { color: rgba(255,255,255,0.7); }
+      .contact-grid {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 70px 32px;
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 60px;
+        align-items: start;
+      }
+      .contact-info h2 { font-family:'Cinzel',serif; font-size:1.4rem; margin-bottom:28px; letter-spacing:1.5px; }
+      .contact-info-item { display:flex; gap:16px; margin-bottom:28px; align-items:flex-start; }
+      .contact-info-item .icon { width:48px; height:48px; background:#f1f2f4; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:#9f835b; flex-shrink:0; }
+      .contact-info-item .text h4 { font-weight:700; margin-bottom:4px; font-size:0.95rem; }
+      .contact-info-item .text p { color:#5e6670; font-size:0.88rem; line-height:1.6; }
+      .contact-form-card { background:#fff; border-radius:20px; padding:40px; box-shadow:0 8px 30px rgba(0,0,0,0.07); }
+      .contact-form-card h2 { font-family:'Cinzel',serif; font-size:1.3rem; margin-bottom:28px; letter-spacing:1px; }
+      .form-group { margin-bottom:18px; }
+      .form-label { display:block; font-size:0.85rem; font-weight:700; color:#374151; margin-bottom:7px; }
+      .form-input { width:100%; padding:12px 14px; border:1.5px solid #e5e7eb; border-radius:8px; font-family:inherit; font-size:0.92rem; outline:none; transition:border-color 0.3s ease; }
+      .form-input:focus { border-color:#000; box-shadow:0 0 0 3px rgba(0,0,0,0.05); }
+      textarea.form-input { height:130px; resize:vertical; }
+      .btn-send { width:100%; padding:16px; background:#121417; color:#fff; border-radius:10px; font-size:0.92rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; border:none; cursor:pointer; margin-top:6px; display:flex; align-items:center; justify-content:center; gap:10px; transition:all 0.3s ease; }
+      .btn-send:hover { background:#c5a880; color:#000; }
+      .faq-section { max-width:800px; margin:0 auto; padding:0 32px 80px; }
+      .faq-section h2 { font-family:'Cinzel',serif; text-align:center; font-size:1.6rem; margin-bottom:40px; letter-spacing:2px; }
+      .faq-item { border-bottom:1px solid #e5e7eb; }
+      .faq-question { display:flex; justify-content:space-between; align-items:center; padding:18px 0; cursor:pointer; font-weight:700; font-size:0.95rem; transition:color 0.2s; }
+      .faq-question:hover { color:#9f835b; }
+      .faq-question i { transition:transform 0.3s ease; color:#8b95a1; }
+      .faq-item.open .faq-question i { transform:rotate(180deg); color:#9f835b; }
+      .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.4s ease, padding 0.3s ease; }
+      .faq-item.open .faq-answer { max-height:200px; padding-bottom:18px; }
+      .faq-answer p { font-size:0.92rem; color:#5e6670; line-height:1.7; }
+      @media(max-width:768px) { .contact-grid { grid-template-columns:1fr; gap:30px; } .contact-hero { padding:70px 20px 50px; } }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header"><span class="sidebar-title">VALUE</span><div id="divMark"><i class="fa-solid fa-xmark"></i></div></div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="store-zara.html"><i class="fa-solid fa-tag"></i> Zara</a></li>
+        <li><a href="store-gucci.html"><i class="fa-solid fa-tag"></i> Gucci</a></li>
+        <li><a href="store-ck.html"><i class="fa-solid fa-tag"></i> Calvin Klein</a></li>
+        <li><a href="store-vogue.html"><i class="fa-solid fa-tag"></i> Vogue</a></li>
+        <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+      </ul>
+      <div class="sidebar-footer"><p>&copy; 2025 VALUE Store.</p></div>
+    </div>
+    <div class="sidebar-backdrop"></div>
+
+    <!-- Navbar -->
+    <nav id="nav">
+      <a href="../index.html" class="nav-brand"><span class="brand-logo">VALUE</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="store-zara.html">Zara</a></li>
+        <li><a href="store-gucci.html">Gucci</a></li>
+        <li><a href="store-ck.html">Calvin Klein</a></li>
+        <li><a href="store-vogue.html">Vogue</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="cart-wrapper"><a href="cart.html" class="nav-btn"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="amount">0</span></a></div>
+        <button class="nav-btn menu-toggle" id="list"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="contact-hero">
+      <div class="section-header" style="padding:0;">
+        <span class="section-label">We're Here to Help</span>
+        <h1 class="section-title" style="color:#fff;margin-top:10px;">Contact Us</h1>
+        <p class="section-desc" style="color:rgba(255,255,255,0.7);">Have a question or need help with your order? Our team is ready to assist you 24/7.</p>
+      </div>
+    </div>
+
+    <!-- Contact Grid -->
+    <div class="contact-grid">
+      <!-- Info -->
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <div class="contact-info-item">
+          <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="text">
+            <h4>Email</h4>
+            <p>support@valuestore.com<br/>orders@valuestore.com</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <div class="text">
+            <h4>WhatsApp</h4>
+            <p>+20 100 000 0000<br/>Available 9am – 9pm daily</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="text">
+            <h4>Showroom</h4>
+            <p>Cairo, Egypt<br/>Mon–Sat: 10am – 8pm</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <div class="text">
+            <h4>Delivery Time</h4>
+            <p>Egypt: 1–3 business days<br/>International: 5–10 business days</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;margin-top:10px;">
+          <a href="#" style="width:42px;height:42px;background:#f1f2f4;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#374151;transition:all 0.2s ease;" onmouseover="this.style.background='#c5a880';this.style.color='#000'" onmouseout="this.style.background='#f1f2f4';this.style.color='#374151'"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" style="width:42px;height:42px;background:#f1f2f4;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#374151;transition:all 0.2s ease;" onmouseover="this.style.background='#c5a880';this.style.color='#000'" onmouseout="this.style.background='#f1f2f4';this.style.color='#374151'"><i class="fa-brands fa-square-facebook"></i></a>
+          <a href="#" style="width:42px;height:42px;background:#f1f2f4;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#374151;transition:all 0.2s ease;" onmouseover="this.style.background='#25d366';this.style.color='#fff'" onmouseout="this.style.background='#f1f2f4';this.style.color='#374151'"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form-card">
+        <h2>Send a Message</h2>
+        <form onsubmit="handleContactSubmit(event)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div class="form-group"><label class="form-label">First Name *</label><input type="text" class="form-input" placeholder="Ahmed" required /></div>
+            <div class="form-group"><label class="form-label">Last Name *</label><input type="text" class="form-input" placeholder="Ibrahim" required /></div>
+          </div>
+          <div class="form-group"><label class="form-label">Email Address *</label><input type="email" class="form-input" placeholder="ahmed@example.com" required /></div>
+          <div class="form-group"><label class="form-label">Subject</label>
+            <select class="form-input">
+              <option value="">Choose a subject...</option>
+              <option>Order Inquiry</option>
+              <option>Return & Exchange</option>
+              <option>Product Question</option>
+              <option>Shipping & Delivery</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">Message *</label><textarea class="form-input" placeholder="Tell us how we can help you..." required></textarea></div>
+          <button type="submit" class="btn-send"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          What are your shipping options? <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer"><p>We offer free shipping on orders over $999. Standard shipping is $30. International orders ship within 5–10 business days. Express options are available at checkout.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          What is your return policy? <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer"><p>We offer a 30-day hassle-free return policy. Items must be unworn, in original packaging with all tags attached. Contact our support team to initiate a return.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Are all products 100% authentic? <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer"><p>Absolutely. VALUE Store is an authorized retailer of all brands we carry. Every product comes with an authenticity certificate and brand packaging.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          How do promo codes work? <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer"><p>Enter your promo code at checkout in the "Promo Code" field. Try VALUE10 for 10% off, LUXURY20 for 20% off, or SAVE50 for $50 off your order.</p></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand"><h2>VALUE</h2><p>Premium luxury fashion curated for the modern lifestyle.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col"><h3>Brands</h3><ul>
+          <li><a href="store-zara.html">Zara</a></li>
+          <li><a href="store-gucci.html">Gucci</a></li>
+          <li><a href="store-ck.html">Calvin Klein</a></li>
+          <li><a href="store-vogue.html">Vogue</a></li>
+        </ul></div>
+        <div class="footer-col"><h3>Help</h3><ul>
+          <li><a href="cart.html">My Cart</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html#faq">FAQ</a></li>
+          <li><a href="../index.html">Home</a></li>
+        </ul></div>
+        <div class="footer-col footer-newsletter"><h3>Newsletter</h3>
+          <p>Subscribe for exclusive drops.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Your email" />
+            <button onclick="showToast('Subscribed!','Thanks for joining VALUE.','success')"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2015-2025 VALUE Store. All rights reserved.</p></div>
+    </footer>
+
+    <i id="btnToUp" class="fa-solid fa-arrow-up"></i>
+
+    <script src="../assets/js/products-data.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+      function handleContactSubmit(e) {
+        e.preventDefault();
+        showToast('Message Sent!', 'Thank you for contacting VALUE. We\'ll reply within 24 hours.', 'success');
+        e.target.reset();
+      }
+      function toggleFaq(el) {
+        const item = el.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      }
+    </script>
+  </body>
+</html>
