@@ -1,0 +1,445 @@
+/*Global*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yuji+Mai&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  visibility: visible;
+}
+
+/*Global*/
+/*start side bar*/
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 40%;
+  height: 100vh;
+  z-index: 2;
+  background: #efefef;
+  color: white;
+  position: fixed;
+  top: 0;
+  right: -50%;
+  transition: 0.5s;
+  padding: 16px;
+}
+.sidebar.active {
+  right: 0;
+}
+.sidebar .content {
+  position: relative;
+  width: 100%;
+  height: 80%;
+}
+.sidebar .content #divMark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  background: #000;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.sidebar .content #divMark i {
+  font-size: 37px;
+  color: #ffffff;
+}
+.sidebar .content #divMark:hover {
+  transform: scale(0.8);
+}
+.sidebar .content ul {
+  list-style: none;
+  position: absolute;
+  top: 80px;
+  left: 20px;
+}
+.sidebar .content ul li {
+  letter-spacing: 5px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  position: relative;
+}
+.sidebar .content ul li i {
+  color: #000;
+  margin-right: 12px;
+}
+.sidebar .content ul li a {
+  font-family: "Noto Serif", serif;
+  font-weight: 700;
+  text-decoration: none;
+  color: #333;
+}
+.sidebar .content ul li::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -4px;
+  width: 0px;
+  height: 4px;
+  border-radius: 10px;
+  background-color: #000000;
+  transition: 0.4s ease;
+}
+.sidebar .content ul li:hover::after {
+  width: 99%;
+}
+
+/*end side bar*/
+/*start navbar*/
+#nav {
+  background: #ffffff;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#nav h1 {
+  background: #000;
+  padding: 7px 4px 0px 4px;
+  margin: 0px 0px 3px 10px;
+  border-radius: 0px 0px 10px 10px;
+  color: #ffffff;
+  font-size: 35px;
+}
+#nav .icon {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 30px;
+  width: 10%;
+  padding: 2px;
+  border-radius: 5px;
+}
+#nav .icon i {
+  color: #000;
+  font-size: 33px;
+  cursor: pointer;
+}
+#nav .icon .number {
+  position: relative;
+}
+#nav .icon .number #amount {
+  position: absolute;
+  background: #000000;
+  color: #ffffff;
+  width: 55%;
+  height: 55%;
+  top: -5px;
+  right: -5px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 10px;
+}
+@media (min-width: 0px) and (max-width: 900px) {
+  #nav .icon {
+    width: 13%;
+    justify-content: space-between;
+    margin-right: 15px;
+  }
+  #nav #backGroundH1 {
+    padding: 7px 2px 0px 4px;
+    margin: 0px 0px 3px 4px;
+  }
+}
+@media (min-width: 0px) and (max-width: 660px) {
+  #nav .icon {
+    width: 20%;
+    justify-content: space-between;
+    margin-right: 23px;
+  }
+}
+
+/*end navbar*/
+/*start head*/
+#head {
+  background: #000000;
+  width: 100%;
+  height: 80vh;
+}
+#head .img {
+  height: 100%;
+  float: right;
+  margin-right: 10px;
+  position: relative;
+  animation-name: width;
+  animation-duration: 2s;
+  animation-delay: 2.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+@keyframes width {
+  0% {
+    width: 58%;
+  }
+  100% {
+    width: 56%;
+  }
+}
+#head .img img {
+  position: absolute;
+  width: 45%;
+  /* Horizontal, Vertical, Blur, Spread */
+  box-shadow: 1px 1px 5px 3px rgba(239, 239, 239, 0.3882352941);
+  border-radius: 20px;
+  animation-name: opacity;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#head .img .img1 {
+  top: 50px;
+  left: 25px;
+  animation-delay: 0.7s;
+}
+#head .img .img2 {
+  top: 200px;
+  left: 49%;
+  animation-delay: 1.5s;
+}
+#head .img .img3 {
+  top: 55%;
+  left: 1px;
+  animation-delay: 2s;
+}
+#head #Collection {
+  position: relative;
+  height: 100%;
+  width: 40%;
+}
+#head #Collection h2 {
+  position: absolute;
+  top: 120px;
+  left: 50px;
+  font-size: 800%;
+  color: #fff;
+  font-family: serif;
+  animation-name: txt;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+@keyframes txt {
+  0% {
+    letter-spacing: 9px;
+  }
+  100% {
+    letter-spacing: 1px;
+  }
+}
+#head #Collection .btn {
+  background: #ffffff;
+  position: absolute;
+  width: 250px;
+  bottom: 50px;
+  left: 50px;
+  border: none;
+  font-size: 27px;
+  font-weight: 600;
+  padding: 4px;
+  border-radius: 10px;
+  transition: 1s;
+  cursor: pointer;
+}
+#head #Collection .btn:hover {
+  letter-spacing: 0.5px;
+}
+@media (min-width: 0px) and (max-width: 860px) {
+  #head {
+    height: 70vh;
+    background-image: url(materyal/01-Calvin_Klein-Raffles_City-Photo.jpg);
+    background-size: 1000px 100%;
+    background-position: right;
+  }
+  #head .img {
+    visibility: hidden;
+  }
+  #head #Collection {
+    width: 100%;
+  }
+  #head #Collection h2 {
+    top: 90px;
+    left: 10px;
+    width: 50%;
+  }
+}
+
+/*end head*/
+/*start collection*/
+#Brands {
+  background: #efefef;
+  width: 100%;
+  padding: 4px 0px;
+}
+#Brands h2 {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+#collection {
+  height: 1100px;
+  width: 80%;
+  margin: auto;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#collection #content {
+  width: 350px;
+  height: 50px;
+}
+#collection #content #card {
+  margin: auto;
+  width: 305px;
+  height: 350px;
+}
+#collection #content #card .section1 {
+  background: #efefef;
+  position: relative;
+}
+#collection #content #card .section1 .product {
+  width: 100%;
+}
+#collection #content #card .section1 .logo {
+  position: absolute;
+  width: 98px;
+  right: 2px;
+  bottom: 4px;
+}
+#collection #content #card .section2 {
+  position: relative;
+  height: 23%;
+  background: #efefef;
+}
+#collection #content #card .section2 h3 {
+  position: absolute;
+  font-size: 21px;
+  letter-spacing: 1.5px;
+  font-family: "Noto Serif", serif;
+  top: 0px;
+  left: 7px;
+}
+#collection #content #card .section2 p {
+  position: absolute;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 22px;
+  left: 13px;
+  bottom: 10px;
+}
+#collection #content #card .section2 button {
+  position: absolute;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  font-size: 13px;
+  bottom: 10px;
+  right: 5px;
+  width: 100px;
+  height: 36px;
+  transition: 1s;
+}
+#collection #content #card .section2 button:hover {
+  letter-spacing: 0.8px;
+  color: #f0efef;
+  cursor: pointer;
+}
+@media (min-width: 876px) and (max-width: 1312px) {
+  #collection {
+    width: 65%;
+    height: 1300px;
+  }
+}
+@media (min-width: 0px) and (max-width: 1074px) {
+  #collection {
+    height: 2500px;
+    justify-content: center;
+  }
+}
+
+/*end collection*/
+/*start footer*/
+#footer {
+  height: 300px;
+  background: #efefef;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#footer #backGroundH1 {
+  background: #000;
+  padding: 6px;
+  border-radius: 8px;
+}
+#footer #backGroundH1 h1 {
+  text-align: center;
+  color: #fff;
+}
+#footer #social {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#footer #social a {
+  color: #000;
+}
+#footer #social a i {
+  font-size: 40px;
+}
+
+#finish {
+  background: #efefef;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+/*end footer*/
+/*start btn to up*/
+#btnToUp {
+  display: none;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  text-align: center;
+  color: #fff;
+  background: #000;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 80px;
+  transition: 0.5s;
+}
+#btnToUp:hover {
+  transform: scale(1.1);
+}
+
+/*end btn to up*//*# sourceMappingURL=main.css.map */
